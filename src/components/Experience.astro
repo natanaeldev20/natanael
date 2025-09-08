@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "April 2022",
+    title: "E-Commerce Next js",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, enim minus. Reiciendis nulla quia sint minima dolorem vero nesciunt, officiis cumque illo blanditiis odio sequi sunt eveniet, nobis modi necessitatibus Illo iusto laudantium nemo enim nulla, vel facilis corrupti laborum quas. Praesentium architecto unde qui! Fugiat vel omnis dolore eos, earum ea voluptatibus aliquid, cupiditate vitae laudantium perferendis nam quidem.",
+    link: "#",
+  },
+
+  {
+    date: "April 2022",
+    title: "E-Commerce Next js",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, enim minus. Reiciendis nulla quia sint minima dolorem vero nesciunt, officiis cumque illo blanditiis odio sequi sunt eveniet, nobis modi necessitatibus Illo iusto laudantium nemo enim nulla, vel facilis corrupti laborum quas. Praesentium architecto unde qui! Fugiat vel omnis dolore eos, earum ea voluptatibus aliquid, cupiditate vitae laudantium perferendis nam quidem.",
+  },
+  {
+    date: "April 2022",
+    title: "E-Commerce Next js",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, enim minus. Reiciendis nulla quia sint minima dolorem vero nesciunt, officiis cumque illo blanditiis odio sequi sunt eveniet, nobis modi necessitatibus Illo iusto laudantium nemo enim nulla, vel facilis corrupti laborum quas. Praesentium architecto unde qui! Fugiat vel omnis dolore eos, earum ea voluptatibus aliquid, cupiditate vitae laudantium perferendis nam quidem.",
+  },
+];
+---
+
+<ol class="relative mt-16 border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

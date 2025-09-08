@@ -1,0 +1,50 @@
+<header
+  class="w-full fixed top-0 z-10 flex justify-center items-center py-2 xl:w-[1120px]"
+>
+  <nav
+    id="navbar"
+    class="px-4 rounded-full text-sm font-medium flex flex-row gap-x-1 opacity-80 text-gray-800 dark:text-white transition-colors duration-500"
+  >
+    <a
+      class="relative block px-2 py-2 transition hover:text-orange-500 dark:hover:text-orange-500"
+      aria-label="experiencia"
+      href="#experiencia">Experiencia</a
+    >
+    <a
+      class="relative block px-2 py-2 transition hover:text-orange-500 dark:hover:text-orange-500"
+      aria-label="proyectos"
+      href="#proyectos">Proyectos</a
+    >
+    <a
+      class="relative block px-2 py-2 transition hover:text-orange-500 dark:hover:text-orange-500"
+      aria-label="sobre mi"
+      href="#sobre-mi">Sobre mí</a
+    >
+    <a
+      class="relative block px-2 py-2 transition hover:text-orange-500 dark:hover:text-orange-500"
+      aria-label="contacto"
+      href="#contacto">Contacto</a
+    >
+  </nav>
+</header>
+<script is:inline>
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add(
+        "shadow-sm",
+        "backdrop-blur-md",
+        "bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]",
+        "dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,165,0,0.15),rgba(0,0,0,0))]"
+      );
+    } else {
+      navbar.classList.remove(
+        "shadow-sm",
+        "backdrop-blur-md",
+        "bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]",
+        "dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,165,0,0.15),rgba(0,0,0,0))]"
+      );
+    }
+  });
+</script>

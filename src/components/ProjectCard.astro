@@ -1,0 +1,81 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import Preview from "./icons/Preview.astro";
+
+interface Tag {
+  name: string;
+  class: string;
+  icon: AstroComponentFactory;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  tags: Tag[];
+  link?: string;
+  github?: string;
+}
+
+const { title, description, image, tags, link, github } = Astro.props;
+---
+
+<article class="w-full grid gap-8
+ md:grid-cols-2">
+  <div class="w-full">
+    <img
+      class="object-cover aspect-video rounded-xl shadow-lg"
+      src={image}
+      alt={`Captura de pantalla del proyecto ${image}`}
+    />
+  </div>
+  <div class="space-y-4">
+    <h3 class="text-2xl font-semibold text-black dark:text-white mb-2">
+      {title}
+    </h3>
+    <ul class="flex flex-row gap-x-4 gap-y-2 flex-wrap">
+      {
+        tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-lg mb-4 text-pretty text-gray-700 dark:text-gray-300">
+      {description}
+    </p>
+    <div class="flex flex-row items-center gap-x-4">
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            class="inline-flex items-center cursor-pointer gap-x-2 text-gray-800 bg-gray-100 text-base py-2 px-3 border border-gray-300 rounded-xl dark:text-white dark:bg-gray-800 dark:border-gray-600 transition-all hover:bg-gray-800 light:hover:border-gray-900 hover:text-white"
+          >
+            <GitHubIcon />
+            Code
+          </a>
+        )
+      }
+      {
+        link && (
+          <a
+            href={link}
+            target="_blank"
+            class="inline-flex cursor-pointer gap-x-2 text-gray-800 bg-gray-100 text-base py-2 px-3 border border-gray-300 rounded-xl dark:text-white dark:bg-gray-800 dark:border-gray-600 transition-all hover:bg-gray-800 light:hover:border-gray-900 hover:text-white"
+          >
+            <Preview />
+            Preview
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>

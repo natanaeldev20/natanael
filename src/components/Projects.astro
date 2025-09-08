@@ -1,0 +1,75 @@
+---
+import NextIcon from "../components/icons/Nextjs.astro";
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import ReactIcon from "./icons/React.astro";
+import ProjectCard from "./ProjectCard.astro";
+import BunIcon from "./icons/Bun.astro";
+import PrismaIcon from "./icons/Prisma.astro";
+import PostgreSQL from "./icons/PostgreSQL.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-blue-900 text-white",
+    icon: ReactIcon,
+  },
+  BUN: {
+    name: "Bun",
+    class: "bg-pink-500 text-white",
+    icon: BunIcon,
+  },
+  PRISMA: {
+    name: "Prisma",
+    class: "bg-green-800 text-white",
+    icon: PrismaIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-cyan-800 text-white",
+    icon: PostgreSQL,
+  },
+};
+
+const PROJECTS = [
+  {
+    title:
+      "CPANEL - Panel de control de gestión de contenido de la I.E. N° 89007",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, enim minus. Quidem, enim minus. Quidem, enim minus.",
+    link: "https://cpanel89007.vercel.app",
+    github: "https://github.com/natanaeldev20/cpanel89007",
+    image: "/projects/project1.webp",
+    tags: [
+      TAGS.NEXT,
+      TAGS.TAILWIND,
+      TAGS.REACT,
+      TAGS.BUN,
+      TAGS.PRISMA,
+      TAGS.POSTGRESQL,
+    ],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, image, tags, link, github }) => (
+    <ProjectCard
+      title={title}
+      description={description}
+      image={image}
+      tags={tags}
+      link={link}
+      github={github}
+    />
+  ))
+}

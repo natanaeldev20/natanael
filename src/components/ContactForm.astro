@@ -1,0 +1,79 @@
+---
+import User from "./icons/User.astro";
+import Send from "./icons/Send.astro";
+---
+
+<form class="w-full flex flex-col gap-y-4">
+  <div class="w-full">
+    <label
+      for="email-address-icon"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Nombre o nombre de la empresa:</label
+    >
+    <div class="relative">
+      <div
+        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+      >
+        <User class="text-gray-500 dark:text-gray-400" />
+      </div>
+      <input
+        type="text"
+        id="email-address-icon"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+        placeholder="tunombre"
+      />
+    </div>
+  </div>
+  <div class="w-full">
+    <label
+      for="email-address-icon"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Correo electronico:</label
+    >
+    <div class="relative">
+      <div
+        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+      >
+        <svg
+          class="w-4 h-4 text-gray-500 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 16"
+        >
+          <path
+            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+          ></path>
+          <path
+            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+          ></path>
+        </svg>
+      </div>
+      <input
+        type="text"
+        id="email-address-icon"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+        placeholder="tucorreo@example.com"
+      />
+    </div>
+  </div>
+  <div class="w-full">
+    <label
+      for="message"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Mensaje:</label
+    >
+    <textarea
+      id="message"
+      rows="4"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+      placeholder="Deja tu mensaje..."></textarea>
+  </div>
+  <button
+    class="flex flex-row items-center gap-x-2 bg-orange-400 dark:bg-transparent text-white dark:text-orange-400 rounded-full border border-white/20 px-8 py-2 text-lg font-semibold shadow-lg cursor-pointer w-max dark:hover:bg-white/10 dark:transition-all"
+    type="submit"
+  >
+    Enviar
+    <Send />
+  </button>
+</form>

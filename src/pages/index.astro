@@ -1,11 +1,109 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from "../components/Badge.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Gmail from "../components/icons/Gmail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Code from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Contact from "../components/icons/Contact.astro";
+import UserCheck from "../components/icons/UserCheck.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="Porfolio de Natanael - Estudiante de Desarrollo de Sistemas de Información"
+  description="Contrata mis servicios"
+>
+  <main class="px-4">
+    <SectionContainer id="top" class="py-16 md:py-36 scroll-m-20">
+      <div class="flex flex-row items-center gap-4 mb-4">
+        <img
+          class="rounded-full shadow-lg size-16"
+          src="https://img.freepik.com/psd-gratis/3d-ilustracion-persona-cabello-largo_23-2149436197.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="natanael photo"
+        />
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </div>
+      <h1
+        class="text-black dark:text-white text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola soy Natanael
+      </h1>
+      <p class="text-xl opacity-80 text-wrap max-w-[700px]">
+        Mas 15 años de experiencia. <span
+          class="text-orange-300/90 font-semibold"
+          >Desarrollador Web y Creador de Contenido
+        </span>
+        de Chimbote, Perú.
+        <span class="opacity-85"
+          >Especializado en crear aplicaciones unicas.</span
+        >
+      </p>
+      <nav>
+        <ul class="flex flex-row gap-4 mt-8 flex-wrap">
+          <li>
+            <SocialPill href="#">
+              <GitHub class="size-4 md:size-6" />
+              GitHub
+            </SocialPill>
+          </li>
+          <li>
+            <SocialPill href="#">
+              <LinkedIn class="size-4 md:size-6" />
+              LinkedIn
+            </SocialPill>
+          </li>
+          <li>
+            <SocialPill href="#">
+              <Gmail class="size-4 md:size-6" />
+              Contáctame
+            </SocialPill>
+          </li>
+        </ul>
+      </nav>
+    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+          <Briefcase class="size-7" />
+          Experiencia laboral
+        </h2>
+        <Experience class="size-7" />
+      </SectionContainer>
+      <SectionContainer id="proyectos">
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+          <Code class="size-7" />
+          Proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+      <SectionContainer id="sobre-mi">
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+          <UserCheck class="size-8" />
+          Sobre mí
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+      <SectionContainer id="contacto">
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+          <Contact class="size-8" />
+          Contactame
+        </h2>
+        <ContactForm />
+      </SectionContainer>
+    </div>
+  </main>
+</BaseLayout>
