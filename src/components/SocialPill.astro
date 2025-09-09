@@ -7,7 +7,16 @@ const { href } = Astro.props;
 ---
 
 <a
-  class="rounded-full border border-white/10 flex items-center justify-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs lg:text-base bg-white/5 hover:bg-white hover:text-black transition-all"
+  class="inline-flex items-center justify-center gap-2 px-4 py-1
+         text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full
+         dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md
+         
+         hover:bg-black hover:border-gray-700 hover:text-white
+         dark:hover:bg-gray-700 dark:hover:border-gray-400
+         
+         max-w-fit focus:outline-none focus-visible:outline-none
+         focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2
+         active:bg-black"
   href={href}
   target="_blank"
   rel="noopener noreferrer"
